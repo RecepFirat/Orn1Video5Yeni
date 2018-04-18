@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Orn1Video5.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,8 @@ namespace Orn1Video5
 		{
 			InitializeComponent();
 
-			MainPage = new Orn1Video5.MainPage();
-		}
+            MainPage = new NavigationPage(new ListPage());
+        }
 
 		protected override void OnStart ()
 		{

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orn1Video5.Views.Insert">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <TableView Intent="Form">
+                <TableRoot>
+
+                    <TableSection Title="Insert Student Form">
+                        <EntryCell x:Name="TxtName" Label="İsim Giriniz"></EntryCell>
+                        <EntryCell x:Name="TxtSurname" Label="Soyİsim Giriniz"></EntryCell>
+                        <EntryCell x:Name="TxtAbout" Label="Soyİsim Giriniz"></EntryCell>
+                        <ViewCell>
+                            <DatePicker x:Name="dtpckrBirthDate"></DatePicker>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <Button x:Name="btnSave" Text="Save" Clicked="OnSave"></Button>
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+                
+                
+            </TableView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+    
+</ContentPage>

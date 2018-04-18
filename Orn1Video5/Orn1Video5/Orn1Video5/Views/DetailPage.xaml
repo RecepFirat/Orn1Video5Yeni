@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orn1Video5.Views.DetailPage">
+
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20">
+            <Label x:Name="lblName"  Text="{Binding Name}"></Label>
+            <Label x:Name="lblSurname" Text="{Binding Surname}"></Label>
+            <Label x:Name="lblAbout" Text="{Binding About}"></Label>
+            <Label x:Name="lblBirthDate" Text="{Binding BirthDate}"></Label>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

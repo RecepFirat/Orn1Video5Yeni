@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Orn1Video5.Views.ListPage"
+            
+             x:Name="LstPage"
+             >
+    <ContentPage.ToolbarItems>
+<!--resolve hataları ıcın ısımlere ıyı bak page ısım verdıgınde--> 
+        
+        
+        <!--ıcon kullanmak ıstıyorsak Primary olarak kalması gerekıyo-->
+        <ToolbarItem Icon="Yeni.ico" Order="Primary" Priority="0" Clicked="onNew">  
+            
+        </ToolbarItem>
+        <!--ıcon kullanmak ıstıyorsak Primary olarak kalması gerekıyo-->
+
+        <ToolbarItem Icon="Refresh.png" Order="Primary" Priority="1" Clicked="onRefresh" >
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    
+    
+    <ContentPage.Content>
+        <Grid>
+            
+            
+            <ListView x:Name="lstStudents" SeparatorVisibility="None"  ItemsSource="{Binding}" ItemSelected="onSelected"> <!--soluna . koymasamda olur-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Surname}">
+                          
+                            <!--listview uzerindeki actionları kontrol edmememızı saglıyo
+                            degere basılı tuttugumda cıkıyo
+                            -->
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Delete" IsDestructive="True" CommandParameter="{Binding}" Clicked="onDeleted"></MenuItem>
+                            </TextCell.ContextActions>
+                            
+                        </TextCell>
+                        
+                        
+                        
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+                
+            </ListView>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                     IsVisible="{Binding Source={x:Reference LstPage} ,Path=IsBusy}"
+                     >
+                <Label Text="Loading Data..." TextColor="Silver" HorizontalOptions="Center"></Label>
+                <ActivityIndicator IsRunning="{Binding Source={x:Reference LstPage} ,Path=IsBusy}">
+
+
+
+                </ActivityIndicator>
+            </StackLayout>
+        </Grid>
+
+
+        
+        
+      
+    </ContentPage.Content>
+    
+    
+    
+    
+</ContentPage>
